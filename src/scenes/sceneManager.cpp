@@ -18,13 +18,17 @@
     
 void sceneManager::setup(){
 
+    // Has animated parameters
+    scenes.push_back(new johnWhitneyShader01());
+    
+    // Old-style parameters
     scenes.push_back(new robbyMolnarScene() );
     scenes.push_back(new veraAnimatedScene() );
     scenes.push_back(new exampleScene() );
     scenes.push_back(new triangleScene() );
     scenes.push_back(new robbyRileyScene() );
     scenes.push_back(new yeseulScene() );
-    scenes.push_back(new johnWhitneyShader01());
+    
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
     codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);

@@ -14,5 +14,5 @@ public:
     ofShader shader;
     ofFbo fbo;
     
-    ofParameter<float> time;
+    animatedParameter time, vertScale;
 };
