@@ -14,6 +14,8 @@
 		5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C88333E71C9457E441C33474 /* ofxButton.cpp */; };
 		63B57AC5BF4EF088491E0317 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50DF87D612C5AAE17AAFA6C0 /* ofxXmlSettings.cpp */; };
 		7118B75E1C0519830092084A /* johnWhitneyShader01.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7118B75C1C0519830092084A /* johnWhitneyShader01.cpp */; };
+		716EF7821C063048005FA544 /* animatedParameter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 716EF7801C063048005FA544 /* animatedParameter.cpp */; };
+		716EF78B1C063E7A005FA544 /* easing.c in Sources */ = {isa = PBXBuildFile; fileRef = 716EF7891C063E7A005FA544 /* easing.c */; };
 		837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15F2C6477A769C03A56D1401 /* ofxSlider.cpp */; };
 		856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9604B925D32EE39065747725 /* ofxBaseGui.cpp */; };
 		85BCD90A1BF7E398004188EE /* yeseulScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85BCD9081BF7E398004188EE /* yeseulScene.cpp */; };
@@ -77,6 +79,10 @@
 		52AFA1F08C420992CAAAE648 /* ofxSlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSlider.h; path = ../../../addons/ofxGui/src/ofxSlider.h; sourceTree = SOURCE_ROOT; };
 		7118B75C1C0519830092084A /* johnWhitneyShader01.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = johnWhitneyShader01.cpp; sourceTree = "<group>"; };
 		7118B75D1C0519830092084A /* johnWhitneyShader01.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = johnWhitneyShader01.h; sourceTree = "<group>"; };
+		716EF7801C063048005FA544 /* animatedParameter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = animatedParameter.cpp; sourceTree = "<group>"; };
+		716EF7811C063048005FA544 /* animatedParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = animatedParameter.h; sourceTree = "<group>"; };
+		716EF7891C063E7A005FA544 /* easing.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = easing.c; sourceTree = "<group>"; };
+		716EF78A1C063E7A005FA544 /* easing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = easing.h; sourceTree = "<group>"; };
 		78D67A00EB899FAC09430597 /* ofxLabel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxLabel.cpp; path = ../../../addons/ofxGui/src/ofxLabel.cpp; sourceTree = SOURCE_ROOT; };
 		802251BAF1B35B1D67B32FD0 /* ofxSliderGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxSliderGroup.cpp; path = ../../../addons/ofxGui/src/ofxSliderGroup.cpp; sourceTree = SOURCE_ROOT; };
 		832BDC407620CDBA568B713D /* tinyxmlerror.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = tinyxmlerror.cpp; path = ../../../addons/ofxXmlSettings/libs/tinyxmlerror.cpp; sourceTree = SOURCE_ROOT; };
@@ -194,6 +200,15 @@
 			path = johnWhitneyShader01;
 			sourceTree = "<group>";
 		};
+		716EF7881C063E7A005FA544 /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				716EF7891C063E7A005FA544 /* easing.c */,
+				716EF78A1C063E7A005FA544 /* easing.h */,
+			);
+			path = vendor;
+			sourceTree = "<group>";
+		};
 		85BCD9071BF7E398004188EE /* yeseulScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +233,8 @@
 				9238719F1BF7993A00171456 /* baseScene.h */,
 				923871A21BF7993A00171456 /* sceneManager.cpp */,
 				923871A31BF7993A00171456 /* sceneManager.h */,
+				716EF7801C063048005FA544 /* animatedParameter.cpp */,
+				716EF7811C063048005FA544 /* animatedParameter.h */,
 			);
 			path = scenes;
 			sourceTree = "<group>";
@@ -326,8 +343,9 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				923871B81BF7D2C400171456 /* appConstants.h */,
 				9238719D1BF7993A00171456 /* scenes */,
+				716EF7881C063E7A005FA544 /* vendor */,
+				923871B81BF7D2C400171456 /* appConstants.h */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
@@ -433,6 +451,7 @@
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
+				716EF78B1C063E7A005FA544 /* easing.c in Sources */,
 				856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */,
 				5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */,
 				D5F490EB1BF7E69B00F92C20 /* robbyRileyScene.cpp in Sources */,
@@ -452,6 +471,7 @@
 				923871B51BF7CCC900171456 /* emptyScene.cpp in Sources */,
 				923871A41BF7993A00171456 /* baseScene.cpp in Sources */,
 				5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */,
+				716EF7821C063048005FA544 /* animatedParameter.cpp in Sources */,
 				D5F490E61BF7DE2D00F92C20 /* robbyMolnarScene.cpp in Sources */,
 				923871A61BF7993A00171456 /* sceneManager.cpp in Sources */,
 				7118B75E1C0519830092084A /* johnWhitneyShader01.cpp in Sources */,

@@ -59,6 +59,7 @@ void sceneManager::setup(){
 
 void sceneManager::update(){
     scenes[currentScene]->update();
+    scenes[currentScene]->updateAnimatedParameters();
 }
 
 void sceneManager::draw(){

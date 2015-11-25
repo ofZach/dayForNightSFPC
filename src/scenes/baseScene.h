@@ -2,6 +2,8 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ofxXmlSettings.h"
+#include "animatedParameter.h"
 
 class baseScene {
     
@@ -26,5 +28,7 @@ public:
     ofRectangle dimensions;     // this is the dimensions of
                                 // the surface you are drawing into.
     
+    void updateAnimatedParameters();
+    vector< animatedParameter* > animatedParameters;
     
 };

@@ -49,3 +49,10 @@ string baseScene::getCodeWithParamsReplaced(){
     return codeWithParams;
 
 }
+
+void baseScene::updateAnimatedParameters() {
+    float time = ofGetElapsedTimef();
+    for (auto animParam : animatedParameters) {
+        animParam->updateTime(time);
+    }
+}
