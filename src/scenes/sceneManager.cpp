@@ -27,7 +27,7 @@ void sceneManager::setup(){
     scenes.push_back(new johnWhitneyShader01());
     
     sceneFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
-    codeFbo.allocate(VISUALS_WIDTH, VISUALS_HEIGHT, GL_RGBA, 4);
+    codeFbo.allocate(CODE_WIDTH, CODE_HEIGHT, GL_RGBA, 4);
 
 
     
@@ -44,6 +44,7 @@ void sceneManager::setup(){
     
     currentScene = 0;
     scenes[currentScene]->reset();
+    sceneStartTime = ofGetElapsedTimef();
     
     
     
@@ -59,11 +60,13 @@ void sceneManager::setup(){
 
 void sceneManager::update(){
     scenes[currentScene]->update();
+    
+    string codeReplaced = scenes[currentScene]->getCodeWithParamsReplaced();
+    typer.updateCode(codeReplaced);
+    typer.update(ofGetElapsedTimef() - sceneStartTime);
 }
 
 void sceneManager::draw(){
-    
-    
     
     sceneFbo.begin();
     ofClear(0,0,0,255);
@@ -75,16 +78,17 @@ void sceneManager::draw(){
     
     
     if (mode == DRAW_SIDE_BY_SIDE){
+        float squareLength = ofGetHeight();
+
         ofSetColor(255,255,255);
-        sceneFbo.draw(0,0,ofGetHeight(), ofGetHeight());
+        sceneFbo.draw(0, 0, squareLength, squareLength);
         
         codeFbo.begin();
         ofClear(50,50,50, 255);
-        string codeReplaced = scenes[currentScene]->getCodeWithParamsReplaced();
-        ofDrawBitmapString(codeReplaced, 40,40);
+        ofDrawBitmapString(typer.getRevealedCode(), 40,40);
         codeFbo.end();
         
-        codeFbo.draw(ofGetHeight(), 0,ofGetHeight(), ofGetHeight());
+        codeFbo.draw(squareLength, 0, squareLength, squareLength);
     } else if (mode == DRAW_SINGLE){
         sceneFbo.draw(0,0);
     }
@@ -97,7 +101,8 @@ void sceneManager::advanceScene(){
     currentScene ++;
     currentScene %= scenes.size();
     scenes[currentScene]->reset();
-    
+    sceneStartTime = ofGetElapsedTimef();
+    typer.resetCode(scenes[currentScene]->getCodeWithParamsReplaced());
     
     
     delete panel;

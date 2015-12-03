@@ -6,6 +6,7 @@
 #include "baseScene.h"
 #include "ofxGui.h"
 #include "appConstants.h"
+#include "codeTyper.h"
 
 
 enum drawMode {
@@ -21,6 +22,7 @@ public:
 
     vector < baseScene * > scenes;
     int currentScene;
+    float sceneStartTime;
     
     void setup();
     void update();
@@ -33,5 +35,7 @@ public:
     ofxPanel * panel;
     
     drawMode mode;
+    
+    codeTyper typer;
     
 };
