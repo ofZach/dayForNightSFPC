@@ -1,4 +1,10 @@
-# Day for Night &mdash; re-coded
+----
+
+# This project has moved → https://github.com/SFPC/recoded
+
+----
+
+## Day for Night &mdash; re-coded
 
 ## Contributing
 
